@@ -23,8 +23,10 @@
 
 @property (nonatomic) BOOL locked;
 
--(IBAction)togglePlayButton:(id)sender;
+-(IBAction)pressPlayButton:(id)sender;
 -(IBAction)toggleRecordButton:(id)sender;
+-(IBAction)stopPlayingIfHeldAndReleased:(id)sender;
+-(IBAction)stopRecordingIfHeldAndReleased:(id)sender;
 
 @end
 

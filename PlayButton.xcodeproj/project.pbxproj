@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87AF27E914492D0700A70EA9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AF27E814492D0700A70EA9 /* AudioToolbox.framework */; };
 		87C864DA144122A7002CDC00 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 87C864D9144122A7002CDC00 /* Settings.bundle */; };
 		87C9491113B56BDD00C8FE2D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C9491013B56BDD00C8FE2D /* UIKit.framework */; };
 		87C9491313B56BDD00C8FE2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C9491213B56BDD00C8FE2D /* Foundation.framework */; };
@@ -34,6 +35,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87760A3F1452F3DA002D8CE0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = /Users/samkass/Development/iPhoneDev/RecordButton/RecordButton/fr.lproj/InfoPlist.strings; sourceTree = "<absolute>"; };
+		87760A401452F3DA002D8CE0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = /Users/samkass/Development/iPhoneDev/RecordButton/RecordButton/fr.lproj/RecordButtonViewController_iPhone.xib; sourceTree = "<absolute>"; };
+		87760A411452F3DA002D8CE0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = /Users/samkass/Development/iPhoneDev/RecordButton/RecordButton/fr.lproj/RecordButtonViewController_iPad.xib; sourceTree = "<absolute>"; };
+		878EAA8714527EA800164B69 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = /Users/samkass/Development/iPhoneDev/RecordButton/RecordButton/es.lproj/InfoPlist.strings; sourceTree = "<absolute>"; };
+		879C8F5014579BBF00345BED /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/RecordButtonViewController_iPhone.xib; sourceTree = "<group>"; };
+		879C8F5114579BC900345BED /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/RecordButtonViewController_iPad.xib; sourceTree = "<group>"; };
+		87AF27E814492D0700A70EA9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		87C864D9144122A7002CDC00 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		87C9490C13B56BDD00C8FE2D /* PlayButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C9491013B56BDD00C8FE2D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -69,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87AF27E914492D0700A70EA9 /* AudioToolbox.framework in Frameworks */,
 				87C9494613B6399100C8FE2D /* AVFoundation.framework in Frameworks */,
 				87C9494713B6399100C8FE2D /* CoreAudio.framework in Frameworks */,
 				87C9491113B56BDD00C8FE2D /* UIKit.framework in Frameworks */,
@@ -100,6 +109,7 @@
 		87C9490F13B56BDD00C8FE2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				87AF27E814492D0700A70EA9 /* AudioToolbox.framework */,
 				87C9494513B6399100C8FE2D /* CoreAudio.framework */,
 				87C9494413B6399100C8FE2D /* AVFoundation.framework */,
 				87C9491013B56BDD00C8FE2D /* UIKit.framework */,
@@ -189,6 +199,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
 			);
 			mainGroup = 87C9490113B56BDC00C8FE2D;
 			productRefGroup = 87C9490D13B56BDD00C8FE2D /* Products */;
@@ -244,6 +255,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				87C9491A13B56BDD00C8FE2D /* en */,
+				878EAA8714527EA800164B69 /* es */,
+				87760A3F1452F3DA002D8CE0 /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -252,6 +265,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				87C9492713B56BDD00C8FE2D /* en */,
+				87760A401452F3DA002D8CE0 /* fr */,
+				879C8F5014579BBF00345BED /* es */,
 			);
 			name = RecordButtonViewController_iPhone.xib;
 			sourceTree = "<group>";
@@ -260,6 +275,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				87C9492A13B56BDD00C8FE2D /* en */,
+				87760A411452F3DA002D8CE0 /* fr */,
+				879C8F5114579BC900345BED /* es */,
 			);
 			name = RecordButtonViewController_iPad.xib;
 			sourceTree = "<group>";
@@ -273,7 +290,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Aardustry LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Aardustry LLC";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -283,8 +300,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "309D98AF-2E30-48B6-B176-5EE0EB252754";
+				PROVISIONING_PROFILE = "5DC6D6C5-3752-4428-A1C2-951497B33704";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5DC6D6C5-3752-4428-A1C2-951497B33704";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -332,7 +349,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Aardustry LLC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Aardustry LLC";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -341,6 +359,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "94209497-04BF-434E-A8BD-C2E1446187DB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "94209497-04BF-434E-A8BD-C2E1446187DB";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

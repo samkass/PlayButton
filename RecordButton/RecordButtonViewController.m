@@ -6,6 +6,7 @@
 //  Copyright 2011 Aardustry LLC. All rights reserved.
 //
 
+#import "AudioToolbox/AudioServices.h"
 #import "RecordButtonViewController.h"
 
 @interface RecordButtonViewController ()
@@ -18,6 +19,8 @@
 @property (nonatomic) BOOL playAfterStop;
 @property (nonatomic) BOOL recordAfterStop;
 
+@property (strong, nonatomic) NSDate *timeThatRecordWasPressed;
+
 -(void)configureButtonState;
 -(NSString*)recordSoundPath;
 -(NSString*)playSoundPath;
@@ -27,6 +30,11 @@
 - (void) initializePlaying;
 - (void) initializeRecording;
 
+- (void) startRecording;
+- (void) stopRecording;
+- (void) startPlaying;
+- (void) stopPlaying;
+
 @end
 
 @implementation RecordButtonViewController
@@ -34,6 +42,7 @@
 @synthesize recordButton, recordButton2;
 @synthesize locked, playAfterStop, recordAfterStop;
 @synthesize recording, recorder, player, playing;
+@synthesize timeThatRecordWasPressed;
 
 - (void)didReceiveMemoryWarning
 {
@@ -68,10 +77,14 @@
   if (self.playing)
   {
     [playButton setImage:[UIImage imageNamed:@"playHighlighted.png"] forState:UIControlStateNormal];
+    [recordButton setEnabled:NO];
+    [recordButton2 setEnabled:NO];
   }
   else
   {
     [playButton setImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateNormal];
+    [recordButton setEnabled:YES];
+    [recordButton2 setEnabled:YES];
   }
 
   if (self.recording)
@@ -99,43 +112,42 @@
   [self configureButtonState];
 }
 
--(IBAction)togglePlayButton:(id)sender
+-(IBAction)pressPlayButton:(id)sender
 {
-  if (recording)
+  if (!playing)
   {
-    playAfterStop = YES;
-    [self.recorder stop];
-  }
-  else
-  {
-    if (!playing)
-    {
-      playing = YES;
-      [self.player play];
-    }
+    [self startPlaying];
     [self configureButtonState];
   }
 }
 
 -(IBAction)toggleRecordButton:(id)sender
 {
-  if (playing)
-  {
-    recordAfterStop = YES;
-    [self.player stop];
-  }
-  else
+  if (!playing)
   {
     if (recording)
     {
-      [self.recorder stop];
+      [self stopRecording];
     }
     else
     {
-      self.recording = YES;
-      [self.recorder record];
+      timeThatRecordWasPressed = [NSDate date];
+      [self startRecording];
     }
     [self configureButtonState];
+  }
+}
+
+-(IBAction)stopPlayingIfHeldAndReleased:(id)sender
+{
+}
+
+-(IBAction)stopRecordingIfHeldAndReleased:(id)sender
+{
+  NSDate *now = [NSDate date];
+  if ([now timeIntervalSinceDate:timeThatRecordWasPressed] > 0.5)
+  {
+    [self stopRecording];
   }
 }
 
@@ -172,6 +184,50 @@
   [super viewDidUnload];
 }
 
+- (void) startRecording
+{
+  if (playing)
+  {
+    recordAfterStop = YES;
+    [self.player stop];
+  }
+  else
+  {
+    if (!recording)
+    {
+      self.recording = YES;
+      [self.recorder record];
+    }
+  }
+}
+
+- (void) stopRecording
+{
+  [self.recorder stop];
+}
+
+- (void) startPlaying
+{
+  if (recording)
+  {
+    playAfterStop = YES;
+    [self.recorder stop];
+  }
+  else
+  {
+    if (!playing)
+    {
+      playing = YES;
+      [self.player play];
+    }
+  }
+}
+
+- (void) stopPlaying
+{
+  [self.player stop];
+}
+
 - (void) initializeAudioSession
 {
   AVAudioSession *audioSession = [AVAudioSession sharedInstance];
@@ -189,6 +245,11 @@
     NSLog(@"audioSession: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
     return;
   }
+  
+  UInt32 doChangeDefaultRoute = 1;  
+  AudioSessionSetProperty (kAudioSessionProperty_OverrideCategoryDefaultToSpeaker,
+                           sizeof (doChangeDefaultRoute),
+                           &doChangeDefaultRoute);
   
   BOOL audioHWAvailable = audioSession.inputIsAvailable;
   if (! audioHWAvailable) {
@@ -210,6 +271,8 @@
   NSError *err = nil;
   self.player = [[ AVAudioPlayer alloc] initWithContentsOfURL:url error:&err];
   [self.player setDelegate:self];
+  [self.player setVolume:1.0];
+//  [self.player setMeteringEnabled:YES];
 }
 
 - (void) initializeRecording
@@ -259,14 +322,13 @@
 - (void)audioRecorderDidFinishRecording:(AVAudioRecorder *) aRecorder successfully:(BOOL)flag
 {
   NSLog (@"audioRecorderDidFinishRecording:successfully:");
-  self.recording = false;
+  self.recording = NO;
   [self resetAfterRecord];
   
   if (playAfterStop)
   {
     playAfterStop = NO;
-    playing = YES;
-    [self.player play];
+    [self startPlaying];
   }
 
   [self configureButtonState];
@@ -275,15 +337,15 @@
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
   NSLog (@"audioPlayerDidFinishPlaying:successfully:");
-  self.playing = false;
+  self.playing = NO;
   
   if (recordAfterStop)
   {
     recordAfterStop = NO;
-    recording = YES;
-    [self.recorder record];
+    [self startRecording];
   }
   [self configureButtonState];
 }
+
 
 @end
