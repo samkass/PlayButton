@@ -7,15 +7,12 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         isPathRelative = "1"
          filePath = "RecordButton/RecordButtonViewController.m"
-         timestampString = "341193972.335565"
+         timestampString = "370571244.722276"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "326"
-         endingLineNumber = "326"
-         landmarkName = "-startPlaying"
-         landmarkType = "5">
+         startingLineNumber = "449"
+         endingLineNumber = "449">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

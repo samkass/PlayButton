@@ -5,6 +5,7 @@
 //  Created by Sam Kass on 6/24/11.
 //  Copyright 2011 Aardustry LLC. All rights reserved.
 //
+#import <AudioToolbox//AudioServices.h>
 
 #import "RecordButtonAppDelegate.h"
 
@@ -65,17 +66,17 @@ NSString *kRecordingLockedKey        = @"recordingLockedKey";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-  {
-      self.viewController = [[RecordButtonViewController alloc] initWithNibName:@"RecordButtonViewController_iPhone" bundle:nil]; 
-  }
-  else
-  {
-      self.viewController = [[RecordButtonViewController alloc] initWithNibName:@"RecordButtonViewController_iPad" bundle:nil]; 
-  }
-  self.window.rootViewController = self.viewController;
+//  // Override point for customization after application launch.
+//  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+//  {
+//      self.viewController = [[RecordButtonViewController alloc] initWithNibName:@"RecordButtonViewController_iPhone" bundle:nil]; 
+//  }
+//  else
+//  {
+//      self.viewController = [[RecordButtonViewController alloc] initWithNibName:@"RecordButtonViewController_iPad" bundle:nil]; 
+//  }
+//  self.window.rootViewController = self.viewController;
   
   // listen for changes to our preferences when the Settings app does so,
   // when we are resumed from the backround, this will give us a chance to update our UI
@@ -98,6 +99,8 @@ NSString *kRecordingLockedKey        = @"recordingLockedKey";
    Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
    Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
    */
+  [self.viewController stopRecording];
+  [self.viewController stopPlaying];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application

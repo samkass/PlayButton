@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MPMediaPickerController.h>
 
 @interface RecordButtonViewController : UIViewController
-            <AVAudioRecorderDelegate, AVAudioPlayerDelegate>
+            <AVAudioRecorderDelegate, AVAudioPlayerDelegate, MPMediaPickerControllerDelegate>
 {
   UIButton *playButton;
   UIButton *recordButton;
@@ -24,9 +25,13 @@
 @property (nonatomic) BOOL locked;
 
 -(IBAction)pressPlayButton:(id)sender;
--(IBAction)toggleRecordButton:(id)sender;
+-(IBAction)pressRecordButton:(id)sender;
+-(IBAction)chooseSoundFromLibrary:(id)sender;
 -(IBAction)stopPlayingIfHeldAndReleased:(id)sender;
 -(IBAction)stopRecordingIfHeldAndReleased:(id)sender;
+
+- (void) stopRecording;
+- (void) stopPlaying;
 
 @end
 
