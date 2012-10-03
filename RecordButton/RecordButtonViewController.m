@@ -85,6 +85,14 @@
   [self configureButtonState];
 }
 
+- (void)viewDidUnload
+{
+  [self setPlayButton:nil];
+  [self setRecordButton:nil];
+  [self setRecordButton2:nil];
+  [super viewDidUnload];
+}
+
 -(void)configureButtonState
 {
   [playButton setEnabled:YES];
@@ -126,17 +134,22 @@
 
 }
 
-- (UIImage*)imageWithImage:(UIImage*)image
-     scaledToSizeOfControl:(UIControl*)control
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
 {
-  CGSize newSize = control.bounds.size;
-  UIGraphicsBeginImageContext( newSize );
-  CGContextSetInterpolationQuality(UIGraphicsGetCurrentContext(), kCGInterpolationHigh);
-  [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
-  UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
-  UIGraphicsEndImageContext();
-  
-  return newImage;
+  CGRect playButtonFrame = playButton.frame;
+  if (interfaceOrientation == UIDeviceOrientationPortrait ||
+      interfaceOrientation == UIDeviceOrientationPortraitUpsideDown)
+  {
+    playButtonFrame.origin.x = 0;
+    playButtonFrame.origin.y = self.view.frame.size.height * 0.1;
+    [playButton setFrame:playButtonFrame];
+  }
+  else
+  {
+    playButtonFrame.origin.x = self.view.frame.size.width * 0.1;
+    playButtonFrame.origin.y = 0;
+    [playButton setFrame:playButtonFrame];
+  }
 }
 
 -(void)setLocked:(BOOL)newLocked
@@ -243,14 +256,6 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
   return YES;
-}
-
-- (void)viewDidUnload
-{
-  [self setPlayButton:nil];
-  [self setRecordButton:nil];
-  [self setRecordButton2:nil];
-  [super viewDidUnload];
 }
 
 - (void) startRecording

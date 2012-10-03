@@ -10,10 +10,10 @@
 
 @class RecordButtonViewController;
 
-@interface RecordButtonAppDelegate : UIResponder <UIApplicationDelegate>
+@interface RecordButtonAppDelegate : NSObject <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) IBOutlet UIWindow *window;
 
-@property (strong, nonatomic) RecordButtonViewController *viewController;
+@property (strong, nonatomic) IBOutlet RecordButtonViewController *viewController;
 
 @end
