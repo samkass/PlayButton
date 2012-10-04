@@ -29,7 +29,6 @@
 @property (assign) BOOL playRecordedAudio;
 @property (strong, nonatomic) NSURL *audioAssetUrl;
 
--(void)configureButtonState;
 -(NSString*)recordSoundPath;
 -(NSString*)playSoundPath;
 - (void)resetAfterRecord;
@@ -281,9 +280,12 @@
 
 - (void) stopRecording
 {
-  stopping = YES;
-  [self.recorder stop];
-  playRecordedAudio = YES;
+  if (recording)
+  {
+    stopping = YES;
+    [self.recorder stop];
+    playRecordedAudio = YES;
+  }
 }
 
 - (void) startPlaying
@@ -309,8 +311,29 @@
 
 - (void) stopPlaying
 {
-  [self.player stop];
+  if (playing)
+  {
+    [self.player stop];
+  }
 }
+
+- (void) pausePlaying
+{
+  if (playing)
+  {
+    [self.player pause];
+  }
+}
+
+
+- (void) resumePlaying
+{
+  if (playing)
+  {
+    [self.player play];
+  }
+}
+
 
 - (void) initializeAudioSession
 {
@@ -421,10 +444,17 @@
 
 - (void)audioRecorderDidFinishRecording:(AVAudioRecorder *) aRecorder successfully:(BOOL)flag
 {
+  if (!recording)
+  {
+    return;
+  }
   NSLog (@"audioRecorderDidFinishRecording:successfully:");
   self.recording = NO;
   self.stopping = NO;
-  [self resetAfterRecord];
+  if (flag)
+  {
+    [self resetAfterRecord];
+  }
   
   if (playAfterStop)
   {

@@ -32,6 +32,9 @@
 
 - (void) stopRecording;
 - (void) stopPlaying;
+- (void) pausePlaying;
+- (void) resumePlaying;
+- (void) configureButtonState;
 
 @end
 

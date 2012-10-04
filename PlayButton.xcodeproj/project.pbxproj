@@ -255,7 +255,7 @@
 		87C9490313B56BDC00C8FE2D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Aardustry LLC";
 			};
 			buildConfigurationList = 87C9490613B56BDC00C8FE2D /* Build configuration list for PBXProject "PlayButton" */;
