@@ -8,36 +8,23 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "RecordButton/RecordButtonViewController.m"
-         timestampString = "371011757.134509"
+         timestampString = "371882619.438919"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "484"
-         endingLineNumber = "484">
+         startingLineNumber = "478"
+         endingLineNumber = "478">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "RecordButton/RecordButtonViewController.m"
-         timestampString = "371011757.134509"
+         timestampString = "371882619.438919"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "451"
-         endingLineNumber = "451"
+         startingLineNumber = "445"
+         endingLineNumber = "445"
          landmarkName = "-audioRecorderDidFinishRecording:successfully:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "RecordButton/RecordButtonViewController.m"
-         timestampString = "371011757.134509"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "426"
-         endingLineNumber = "426"
-         landmarkName = "-resetAfterRecord"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -58,24 +45,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "RecordButton/RecordButtonViewController.m"
-         timestampString = "371011757.134509"
+         timestampString = "371882619.438919"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "441"
-         endingLineNumber = "441"
-         landmarkName = "-resetAfterRecord"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "RecordButton/RecordButtonViewController.m"
-         timestampString = "371011757.134509"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "470"
-         endingLineNumber = "470"
+         startingLineNumber = "464"
+         endingLineNumber = "464"
          landmarkName = "-audioPlayerDidFinishPlaying:successfully:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -84,12 +58,38 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "RecordButton/RecordButtonViewController.m"
-         timestampString = "371011509.711123"
+         timestampString = "371880536.59326"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "314"
-         endingLineNumber = "314"
+         startingLineNumber = "312"
+         endingLineNumber = "312"
          landmarkName = "-stopPlaying"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "RecordButton/RecordButtonViewController.m"
+         timestampString = "371882619.438919"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "396"
+         endingLineNumber = "396"
+         landmarkName = "-initializeRecording"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "RecordButton/RecordButtonViewController.m"
+         timestampString = "379700354.155715"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "420"
+         endingLineNumber = "420"
+         landmarkName = "-resetAfterRecord"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
