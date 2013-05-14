@@ -268,12 +268,11 @@
   {
     if (!recording)
     {
-      self.recording = YES;
       if (self.recorder == nil)
       {
         [self initializeRecording];
       }
-      [self.recorder record];
+      self.recording = [self.recorder record];
     }
   }
 }
@@ -299,12 +298,11 @@
   {
     if (!playing)
     {
-      playing = YES;
       if (self.player == nil)
       {
         [self initializePlaying];
       }
-      [self.player play];
+      playing = [self.player play];
     }
   }
 }
@@ -330,7 +328,7 @@
 {
   if (playing)
   {
-    [self.player play];
+    playing = [self.player play];
   }
 }
 
@@ -392,12 +390,8 @@
   NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];
   
   [recordSetting setValue :[NSNumber numberWithInt:kAudioFormatLinearPCM] forKey:AVFormatIDKey];
-  [recordSetting setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey]; 
-  [recordSetting setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
-  
+  [recordSetting setValue:[NSNumber numberWithInt: 1] forKey:AVNumberOfChannelsKey];
   [recordSetting setValue :[NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
-  [recordSetting setValue :[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
-  [recordSetting setValue :[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];
   
   NSURL *url = [NSURL fileURLWithPath:[self recordSoundPath]];
   NSError *err = nil;
@@ -442,7 +436,7 @@
   [self initializeRecording];
 }
 
-- (void)audioRecorderDidFinishRecording:(AVAudioRecorder *) aRecorder successfully:(BOOL)flag
+- (void)audioRecorderDidFinishRecording:(AVAudioRecorder *) aRecorder successfully:(BOOL)successful
 {
   if (!recording)
   {
@@ -451,7 +445,7 @@
   NSLog (@"audioRecorderDidFinishRecording:successfully:");
   self.recording = NO;
   self.stopping = NO;
-  if (flag)
+  if (successful)
   {
     [self resetAfterRecord];
   }
