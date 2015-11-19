@@ -195,13 +195,13 @@
   NSLocalizedString (@"Select audio to play",
                      "Prompt in media item picker");
   
-  [self presentModalViewController: picker animated: YES];
+  [self presentViewController: picker animated: YES completion:nil];
 }
 
 - (void) mediaPicker: (MPMediaPickerController *) mediaPicker
    didPickMediaItems: (MPMediaItemCollection *) collection
 {  
-  [self dismissModalViewControllerAnimated: YES];
+  [self dismissViewControllerAnimated: YES completion:nil];
   playRecordedAudio = NO;
   audioAssetUrl = [collection.representativeItem valueForProperty:MPMediaItemPropertyAssetURL];
   self.player = nil;
@@ -209,7 +209,7 @@
 
 - (void) mediaPickerDidCancel: (MPMediaPickerController *) mediaPicker
 {  
-  [self dismissModalViewControllerAnimated: YES];
+  [self dismissViewControllerAnimated: YES completion:nil];
 }
 
 -(IBAction)stopPlayingIfHeldAndReleased:(id)sender
@@ -340,24 +340,27 @@
   [audioSession setCategory :AVAudioSessionCategoryPlayAndRecord error:&err];
   if (err)
   {
-    NSLog(@"audioSession: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
+    NSLog(@"audioSession: %@ %ld %@", [err domain], (long)[err code], [[err userInfo] description]);
     return;
   }
   [audioSession setActive:YES error:&err];
   err = nil;
   if (err)
   {
-    NSLog(@"audioSession: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
+    NSLog(@"audioSession: %@ %ld %@", [err domain], (long)[err code], [[err userInfo] description]);
     return;
   }
   
-  UInt32 doChangeDefaultRoute = 1;  
-  AudioSessionSetProperty (kAudioSessionProperty_OverrideCategoryDefaultToSpeaker,
-                           sizeof (doChangeDefaultRoute),
-                           &doChangeDefaultRoute);
+  BOOL success = [audioSession overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:&err];
+  if (!success)  NSLog(@"AVAudioSession error overrideOutputAudioPort:%@", err);
   
-  BOOL audioHWAvailable = audioSession.inputIsAvailable;
-  if (! audioHWAvailable) {
+//  UInt32 doChangeDefaultRoute = 1;
+//  AudioSessionSetProperty (kAudioSessionProperty_OverrideCategoryDefaultToSpeaker,
+//                           sizeof (doChangeDefaultRoute),
+//                           &doChangeDefaultRoute);
+  
+//  BOOL audioHWAvailable = audioSession.isInputAvailable;
+  if (! audioSession.inputAvailable) {
     UIAlertView *cantRecordAlert =
     [[UIAlertView alloc] initWithTitle: @"Warning"
                                message: @"Audio input hardware not available"
@@ -398,7 +401,7 @@
   self.recorder = [[ AVAudioRecorder alloc] initWithURL:url settings:recordSetting error:&err];
   if (!self.recorder)
   {
-    NSLog(@"recorder: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
+    NSLog(@"recorder: %@ %ld %@", [err domain], (long)[err code], [[err userInfo] description]);
     UIAlertView *alert =
     [[UIAlertView alloc] initWithTitle: @"Warning"
                                message: [err localizedDescription]
