@@ -25,30 +25,28 @@ NSString *kRecordingLockedKey        = @"recordingLockedKey";
 	{
 		// no default values have been set, create them here based on what's in our Settings bundle info
 		//
-		NSString *pathStr = [[NSBundle mainBundle] bundlePath];
+		NSString *pathStr = [NSBundle mainBundle].bundlePath;
 		NSString *settingsBundlePath = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
 		NSString *finalPath = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
     
 		NSDictionary *settingsDict = [NSDictionary dictionaryWithContentsOfFile:finalPath];
-		NSArray *prefSpecifierArray = [settingsDict objectForKey:@"PreferenceSpecifiers"];
+		NSArray *prefSpecifierArray = settingsDict[@"PreferenceSpecifiers"];
     
 		id recordLockedDefault = nil;
 		
 		NSDictionary *prefItem;
 		for (prefItem in prefSpecifierArray)
 		{
-			NSString *keyValueStr = [prefItem objectForKey:@"Key"];
+			NSString *keyValueStr = prefItem[@"Key"];
 			
 			if ([keyValueStr isEqualToString:kRecordingLockedKey])
 			{
-				recordLockedDefault = [prefItem objectForKey:@"DefaultValue"];
+				recordLockedDefault = prefItem[@"DefaultValue"];
 			}
 		}
     
 		// since no default values have been set (i.e. no preferences file created), create it here		
-		NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
-                                 recordLockedDefault, kRecordingLockedKey,
-                                 nil];
+		NSDictionary *appDefaults = @{kRecordingLockedKey: recordLockedDefault};
     
 		[[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
 		[[NSUserDefaults standardUserDefaults] synchronize];
@@ -56,7 +54,7 @@ NSString *kRecordingLockedKey        = @"recordingLockedKey";
 	
 	// we're ready to go, so lastly set the key preference values
 	BOOL recordLocked = [[[NSUserDefaults standardUserDefaults] objectForKey:kRecordingLockedKey] boolValue];
-  [self.viewController setLocked:recordLocked];
+  (self.viewController).locked = recordLocked;
 }
 
 - (void)defaultsChanged:(NSNotification *)notification

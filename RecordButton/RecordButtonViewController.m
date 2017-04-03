@@ -29,8 +29,8 @@
 @property (assign) BOOL playRecordedAudio;
 @property (strong, nonatomic) NSURL *audioAssetUrl;
 
--(NSString*)recordSoundPath;
--(NSString*)playSoundPath;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *recordSoundPath;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *playSoundPath;
 - (void)resetAfterRecord;
 
 - (void) initializeAudioSession;
@@ -126,10 +126,10 @@
     [recordButton2 setImage:[UIImage imageNamed:@"recordHighlighted.png"] forState:UIControlStateHighlighted];
   }
 
-  [recordButton setHidden:locked];
-  [recordButton2 setHidden:locked];
+  recordButton.hidden = locked;
+  recordButton2.hidden = locked;
   
-  [playButton setEnabled:[[NSFileManager defaultManager] fileExistsAtPath:[self playSoundPath]]];
+  playButton.enabled = [[NSFileManager defaultManager] fileExistsAtPath:[self playSoundPath]];
 
 }
 
@@ -141,13 +141,13 @@
   {
     playButtonFrame.origin.x = 0;
     playButtonFrame.origin.y = self.view.frame.size.height * 0.1;
-    [playButton setFrame:playButtonFrame];
+    playButton.frame = playButtonFrame;
   }
   else
   {
     playButtonFrame.origin.x = self.view.frame.size.width * 0.1;
     playButtonFrame.origin.y = 0;
-    [playButton setFrame:playButtonFrame];
+    playButton.frame = playButtonFrame;
   }
 }
 
@@ -189,7 +189,7 @@
   [[MPMediaPickerController alloc]
    initWithMediaTypes: MPMediaTypeAnyAudio];
   
-  [picker setDelegate: self];
+  picker.delegate = self;
   [picker setAllowsPickingMultipleItems: NO];
   picker.prompt =
   NSLocalizedString (@"Select audio to play",
@@ -230,7 +230,7 @@
   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, 
                                                        NSUserDomainMask, 
                                                        YES);
-  NSString *documentsDirectory = [paths objectAtIndex:0];
+  NSString *documentsDirectory = paths[0];
   return [documentsDirectory stringByAppendingPathComponent:
           [NSString stringWithFormat:@"RECORD.caf"]];
 }
@@ -242,13 +242,13 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, 
                                                          NSUserDomainMask, 
                                                          YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *documentsDirectory = paths[0];
     return [documentsDirectory stringByAppendingPathComponent:
             [NSString stringWithFormat:@"PLAY.caf"]];
   }
   else
   {
-    return [audioAssetUrl absoluteString];
+    return audioAssetUrl.absoluteString;
   }
 }
 
@@ -343,14 +343,14 @@
                       error:&err];
   if (err)
   {
-    NSLog(@"audioSession: %@ %ld %@", [err domain], (long)[err code], [[err userInfo] description]);
+    NSLog(@"audioSession: %@ %ld %@", err.domain, (long)err.code, err.userInfo.description);
     return;
   }
   [audioSession setActive:YES error:&err];
   err = nil;
   if (err)
   {
-    NSLog(@"audioSession: %@ %ld %@", [err domain], (long)[err code], [[err userInfo] description]);
+    NSLog(@"audioSession: %@ %ld %@", err.domain, (long)err.code, err.userInfo.description);
     return;
   }
   
@@ -403,8 +403,8 @@
     NSLog(@"Play sound file missing!");
     return;
   }
-  [self.player setDelegate:self];
-  [self.player setVolume:1.0];
+  (self.player).delegate = self;
+  (self.player).volume = 1.0;
 //  [self.player setMeteringEnabled:YES];
 }
 
@@ -413,15 +413,15 @@
   NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];
   
   [recordSetting setValue :[NSNumber numberWithInt:kAudioFormatLinearPCM] forKey:AVFormatIDKey];
-  [recordSetting setValue:[NSNumber numberWithInt: 1] forKey:AVNumberOfChannelsKey];
-  [recordSetting setValue :[NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
+  [recordSetting setValue:@1 forKey:AVNumberOfChannelsKey];
+  [recordSetting setValue :@16 forKey:AVLinearPCMBitDepthKey];
   
   NSURL *url = [NSURL fileURLWithPath:[self recordSoundPath]];
   NSError *err = nil;
   self.recorder = [[ AVAudioRecorder alloc] initWithURL:url settings:recordSetting error:&err];
   if (!self.recorder)
   {
-    NSLog(@"recorder: %@ %ld %@", [err domain], (long)[err code], [[err userInfo] description]);
+    NSLog(@"recorder: %@ %ld %@", err.domain, (long)err.code, err.userInfo.description);
     
 //    UIAlertView *alert =
 //    [[UIAlertView alloc] initWithTitle: @"Warning"
@@ -433,7 +433,7 @@
 
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle:@"Warning"
-                                  message:[err localizedDescription]
+                                  message:err.localizedDescription
                                   preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* ok = [UIAlertAction
                          actionWithTitle:@"OK"
@@ -449,7 +449,7 @@
   }
   
   //prepare to record
-  [self.recorder setDelegate:self];
+  (self.recorder).delegate = self;
   [self.recorder setMeteringEnabled:YES];
   [self.recorder prepareToRecord];
 }
