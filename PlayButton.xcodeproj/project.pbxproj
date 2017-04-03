@@ -13,10 +13,6 @@
 		8775980516152899003926A2 /* record@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8775980216152898003926A2 /* record@2x~ipad.png */; };
 		8775980616152899003926A2 /* record~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8775980316152898003926A2 /* record~ipad.png */; };
 		87985406161532D20006E99B /* playHighlighted@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 87985405161532D20006E99B /* playHighlighted@2x~ipad.png */; };
-		8798540A161534E20006E99B /* icon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 87985409161534E20006E99B /* icon144.png */; };
-		8798540E161535030006E99B /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 8798540B161535030006E99B /* icon57.png */; };
-		8798540F161535030006E99B /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 8798540C161535030006E99B /* icon72.png */; };
-		87985410161535030006E99B /* icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 8798540D161535030006E99B /* icon114.png */; };
 		8798541416169AC10006E99B /* recordHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8798541116169AC10006E99B /* recordHighlighted@2x.png */; };
 		8798541516169AC10006E99B /* recordHighlighted@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8798541216169AC10006E99B /* recordHighlighted@2x~ipad.png */; };
 		8798541616169AC10006E99B /* recordHighlighted~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8798541316169AC10006E99B /* recordHighlighted~ipad.png */; };
@@ -54,6 +50,8 @@
 		87C9494613B6399100C8FE2D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C9494413B6399100C8FE2D /* AVFoundation.framework */; };
 		87C9494713B6399100C8FE2D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C9494513B6399100C8FE2D /* CoreAudio.framework */; };
 		87C9495113B6571600C8FE2D /* pencilSm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 87C9495013B6571600C8FE2D /* pencilSm@2x.png */; };
+		87E548B41E92FAFD00B6BC54 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E548B31E92FAFD00B6BC54 /* Launch Screen.storyboard */; };
+		87E548BC1E93018900B6BC54 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87E548BB1E93018900B6BC54 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,10 +63,6 @@
 		87760A3F1452F3DA002D8CE0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = /Users/samkass/Development/iPhoneDev/RecordButton/RecordButton/fr.lproj/InfoPlist.strings; sourceTree = "<absolute>"; };
 		878EAA8714527EA800164B69 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = /Users/samkass/Development/iPhoneDev/RecordButton/RecordButton/es.lproj/InfoPlist.strings; sourceTree = "<absolute>"; };
 		87985405161532D20006E99B /* playHighlighted@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playHighlighted@2x~ipad.png"; sourceTree = "<group>"; };
-		87985409161534E20006E99B /* icon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon144.png; sourceTree = "<group>"; };
-		8798540B161535030006E99B /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
-		8798540C161535030006E99B /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
-		8798540D161535030006E99B /* icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114.png; sourceTree = "<group>"; };
 		8798541116169AC10006E99B /* recordHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recordHighlighted@2x.png"; sourceTree = "<group>"; };
 		8798541216169AC10006E99B /* recordHighlighted@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recordHighlighted@2x~ipad.png"; sourceTree = "<group>"; };
 		8798541316169AC10006E99B /* recordHighlighted~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recordHighlighted~ipad.png"; sourceTree = "<group>"; };
@@ -111,6 +105,8 @@
 		87C9494413B6399100C8FE2D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		87C9494513B6399100C8FE2D /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		87C9495013B6571600C8FE2D /* pencilSm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pencilSm@2x.png"; sourceTree = "<group>"; };
+		87E548B31E92FAFD00B6BC54 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		87E548BB1E93018900B6BC54 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PlayButton/Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,10 +131,7 @@
 		87C9490113B56BDC00C8FE2D = {
 			isa = PBXGroup;
 			children = (
-				8798540B161535030006E99B /* icon57.png */,
-				8798540C161535030006E99B /* icon72.png */,
-				8798540D161535030006E99B /* icon114.png */,
-				87985409161534E20006E99B /* icon144.png */,
+				87E548BB1E93018900B6BC54 /* Images.xcassets */,
 				87BD87D816127F8A00ADDBF1 /* Default-568h@2x.png */,
 				87C9491613B56BDD00C8FE2D /* RecordButton */,
 				87C9490F13B56BDD00C8FE2D /* Frameworks */,
@@ -178,6 +171,7 @@
 				87C9492413B56BDD00C8FE2D /* RecordButtonViewController.m */,
 				877597FC1612BDE6003926A2 /* Window.xib */,
 				877597FF1612BED8003926A2 /* Window-iPad.xib */,
+				87E548B31E92FAFD00B6BC54 /* Launch Screen.storyboard */,
 				87C9494113B6368500C8FE2D /* Images */,
 				87C9491713B56BDD00C8FE2D /* Supporting Files */,
 			);
@@ -298,6 +292,7 @@
 				87C9494313B637BE00C8FE2D /* pencilSm.png in Resources */,
 				87C9495113B6571600C8FE2D /* pencilSm@2x.png in Resources */,
 				87C864DA144122A7002CDC00 /* Settings.bundle in Resources */,
+				87E548BC1E93018900B6BC54 /* Images.xcassets in Resources */,
 				87BD87D216127C8B00ADDBF1 /* play.png in Resources */,
 				87BD87D616127C9600ADDBF1 /* play@2x~ipad.png in Resources */,
 				87BD87D716127C9600ADDBF1 /* play~ipad.png in Resources */,
@@ -307,13 +302,10 @@
 				877597FD1612BDE6003926A2 /* Window.xib in Resources */,
 				877598001612BED8003926A2 /* Window-iPad.xib in Resources */,
 				8775980416152899003926A2 /* record@2x.png in Resources */,
+				87E548B41E92FAFD00B6BC54 /* Launch Screen.storyboard in Resources */,
 				8775980516152899003926A2 /* record@2x~ipad.png in Resources */,
 				8775980616152899003926A2 /* record~ipad.png in Resources */,
 				87985406161532D20006E99B /* playHighlighted@2x~ipad.png in Resources */,
-				8798540A161534E20006E99B /* icon144.png in Resources */,
-				8798540E161535030006E99B /* icon57.png in Resources */,
-				8798540F161535030006E99B /* icon72.png in Resources */,
-				87985410161535030006E99B /* icon114.png in Resources */,
 				8798541416169AC10006E99B /* recordHighlighted@2x.png in Resources */,
 				8798541516169AC10006E99B /* recordHighlighted@2x~ipad.png in Resources */,
 				8798541616169AC10006E99B /* recordHighlighted~ipad.png in Resources */,
@@ -395,12 +387,13 @@
 		8783A2C3141D659200A91881 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RecordButton/PlayButton-Prefix.pch";
 				INFOPLIST_FILE = "RecordButton/PlayButton-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.samkass.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -488,12 +481,13 @@
 		87C9492F13B56BDD00C8FE2D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RecordButton/PlayButton-Prefix.pch";
 				INFOPLIST_FILE = "RecordButton/PlayButton-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.samkass.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -503,12 +497,13 @@
 		87C9493013B56BDD00C8FE2D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RecordButton/PlayButton-Prefix.pch";
 				INFOPLIST_FILE = "RecordButton/PlayButton-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.samkass.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
