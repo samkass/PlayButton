@@ -129,7 +129,7 @@
   recordButton.hidden = locked;
   recordButton2.hidden = locked;
   
-  playButton.enabled = [[NSFileManager defaultManager] fileExistsAtPath:[self playSoundPath]];
+  playButton.enabled = [[NSFileManager defaultManager] fileExistsAtPath:self.playSoundPath];
 
 }
 
@@ -395,7 +395,7 @@
 
 - (void) initializePlaying
 {
-  NSURL *url = [NSURL fileURLWithPath:[self playSoundPath]];
+  NSURL *url = [NSURL fileURLWithPath:self.playSoundPath];
   NSError *err = nil;
   self.player = [[ AVAudioPlayer alloc] initWithContentsOfURL:url error:&err];
   if (err != nil)
@@ -416,7 +416,7 @@
   [recordSetting setValue:@1 forKey:AVNumberOfChannelsKey];
   [recordSetting setValue :@16 forKey:AVLinearPCMBitDepthKey];
   
-  NSURL *url = [NSURL fileURLWithPath:[self recordSoundPath]];
+  NSURL *url = [NSURL fileURLWithPath:self.recordSoundPath];
   NSError *err = nil;
   self.recorder = [[ AVAudioRecorder alloc] initWithURL:url settings:recordSetting error:&err];
   if (!self.recorder)
@@ -457,15 +457,15 @@
 - (void)resetAfterRecord
 {
   NSError *err = nil;
-  if ([[NSFileManager defaultManager] fileExistsAtPath:[self recordSoundPath]])
+  if ([[NSFileManager defaultManager] fileExistsAtPath:self.recordSoundPath])
   {
-    if (![[NSFileManager defaultManager] removeItemAtPath:[self playSoundPath] error:&err])
+    if (![[NSFileManager defaultManager] removeItemAtPath:self.playSoundPath error:&err])
     {
       NSLog(@"Failed to remove old play sound.");
       NSLog(@"%@", err.description);
     }
-    if (![[NSFileManager defaultManager] moveItemAtPath:[self recordSoundPath]
-                                                 toPath:[self playSoundPath] error:&err])
+    if (![[NSFileManager defaultManager] moveItemAtPath:self.recordSoundPath
+                                                 toPath:self.playSoundPath error:&err])
     {
       NSLog(@"Failed to move record sound to play sound.");
       NSLog(@"%@", err.description);
