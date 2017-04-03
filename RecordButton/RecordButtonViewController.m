@@ -337,7 +337,10 @@
 {
   AVAudioSession *audioSession = [AVAudioSession sharedInstance];
   NSError *err = nil;
-  [audioSession setCategory :AVAudioSessionCategoryPlayAndRecord error:&err];
+  [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord
+                withOptions:AVAudioSessionCategoryOptionAllowBluetooth |
+                              AVAudioSessionCategoryOptionDefaultToSpeaker
+                      error:&err];
   if (err)
   {
     NSLog(@"audioSession: %@ %ld %@", [err domain], (long)[err code], [[err userInfo] description]);
@@ -351,8 +354,8 @@
     return;
   }
   
-  BOOL success = [audioSession overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:&err];
-  if (!success)  NSLog(@"AVAudioSession error overrideOutputAudioPort:%@", err);
+//  BOOL success = [audioSession overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:&err];
+//  if (!success)  NSLog(@"AVAudioSession error overrideOutputAudioPort:%@", err);
   
 //  UInt32 doChangeDefaultRoute = 1;
 //  AudioSessionSetProperty (kAudioSessionProperty_OverrideCategoryDefaultToSpeaker,
@@ -361,13 +364,30 @@
   
 //  BOOL audioHWAvailable = audioSession.isInputAvailable;
   if (! audioSession.inputAvailable) {
-    UIAlertView *cantRecordAlert =
-    [[UIAlertView alloc] initWithTitle: @"Warning"
-                               message: @"Audio input hardware not available"
-                              delegate: nil
-                     cancelButtonTitle:@"OK"
-                     otherButtonTitles:nil];
-    [cantRecordAlert show];
+//    UIAlertView *cantRecordAlert =
+//    [[UIAlertView alloc] initWithTitle: @"Warning"
+//                               message: @"Audio input hardware not available"
+//                              delegate: nil
+//                     cancelButtonTitle:@"OK"
+//                     otherButtonTitles:nil];
+//    [cantRecordAlert show];
+
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Warning"
+                                  message:@"Audio input hardware not available"
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* ok = [UIAlertAction
+                       actionWithTitle:@"OK"
+                       style:UIAlertActionStyleDefault
+                       handler:^(UIAlertAction * action)
+                       {
+                         //Do some thing here
+                         [alert dismissViewControllerAnimated:YES completion:nil];
+                         
+                       }];
+    [alert addAction:ok]; // add action to uialertcontroller
+    [self presentViewController:alert animated:YES completion:nil];
+
     return;
   }
   
@@ -402,13 +422,29 @@
   if (!self.recorder)
   {
     NSLog(@"recorder: %@ %ld %@", [err domain], (long)[err code], [[err userInfo] description]);
-    UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle: @"Warning"
-                               message: [err localizedDescription]
-                              delegate: nil
-                     cancelButtonTitle:@"OK"
-                     otherButtonTitles:nil];
-    [alert show];
+    
+//    UIAlertView *alert =
+//    [[UIAlertView alloc] initWithTitle: @"Warning"
+//                               message: [err localizedDescription]
+//                              delegate: nil
+//                     cancelButtonTitle:@"OK"
+//                     otherButtonTitles:nil];
+//    [alert show];
+
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Warning"
+                                  message:[err localizedDescription]
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                           [alert dismissViewControllerAnimated:YES completion:nil];
+                           
+                         }];
+    [alert addAction:ok]; // add action to uialertcontroller
+    [self presentViewController:alert animated:YES completion:nil];
     return;
   }
   
