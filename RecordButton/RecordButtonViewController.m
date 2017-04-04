@@ -130,7 +130,8 @@
   recordButton2.hidden = locked;
   
   playButton.enabled = [[NSFileManager defaultManager] fileExistsAtPath:self.playSoundPath];
-
+  recordButton.enabled = self.recorder != nil;
+  recordButton2.enabled = self.recorder != nil;
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
@@ -430,10 +431,11 @@
 //                     cancelButtonTitle:@"OK"
 //                     otherButtonTitles:nil];
 //    [alert show];
-
+    NSString *errorMessage = err.localizedDescription ? err.localizedDescription : @"Unknown Error";
+    
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle:@"Warning"
-                                  message:err.localizedDescription
+                                  message:errorMessage
                                   preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* ok = [UIAlertAction
                          actionWithTitle:@"OK"
