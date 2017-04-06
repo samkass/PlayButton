@@ -74,6 +74,8 @@
 
 -(void)viewDidLoad
 {
+  [super viewDidLoad];
+  
   playRecordedAudio = YES;
   audioAssetUrl = nil;
   
