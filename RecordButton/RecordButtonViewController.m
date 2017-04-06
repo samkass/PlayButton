@@ -132,8 +132,25 @@
   recordButton2.hidden = locked;
   
   playButton.enabled = [[NSFileManager defaultManager] fileExistsAtPath:self.playSoundPath];
-  recordButton.enabled = self.recorder != nil;
-  recordButton2.enabled = self.recorder != nil;
+  bool recordButtonEnabled = self.recorder != nil;
+  
+  switch ([[AVAudioSession sharedInstance] recordPermission]) {
+    case AVAudioSessionRecordPermissionGranted:
+      
+      break;
+    case AVAudioSessionRecordPermissionDenied:
+      recordButtonEnabled = false;
+      break;
+    case AVAudioSessionRecordPermissionUndetermined:
+      // This is the initial state before a user has made any choice
+      // You can use this spot to request permission here if you want
+      break;
+    default:
+      break;
+  }
+  
+  recordButton.enabled = recordButtonEnabled;
+  recordButton2.enabled = recordButtonEnabled;
 }
 
 -(void)setLocked:(BOOL)newLocked
