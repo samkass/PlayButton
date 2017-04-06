@@ -32,7 +32,7 @@ NSString *kRecordingLockedKey        = @"recordingLockedKey";
 		NSDictionary *settingsDict = [NSDictionary dictionaryWithContentsOfFile:finalPath];
 		NSArray *prefSpecifierArray = settingsDict[@"PreferenceSpecifiers"];
     
-		id recordLockedDefault = nil;
+		NSString *recordLockedDefault = @"NO";
 		
 		NSDictionary *prefItem;
 		for (prefItem in prefSpecifierArray)
