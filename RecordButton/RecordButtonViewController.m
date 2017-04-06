@@ -134,24 +134,6 @@
   recordButton2.enabled = self.recorder != nil;
 }
 
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
-{
-  CGRect playButtonFrame = playButton.frame;
-  if (interfaceOrientation == UIDeviceOrientationPortrait ||
-      interfaceOrientation == UIDeviceOrientationPortraitUpsideDown)
-  {
-    playButtonFrame.origin.x = 0;
-    playButtonFrame.origin.y = self.view.frame.size.height * 0.1;
-    playButton.frame = playButtonFrame;
-  }
-  else
-  {
-    playButtonFrame.origin.x = self.view.frame.size.width * 0.1;
-    playButtonFrame.origin.y = 0;
-    playButton.frame = playButtonFrame;
-  }
-}
-
 -(void)setLocked:(BOOL)newLocked
 {
   locked = newLocked;
