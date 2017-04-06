@@ -356,23 +356,7 @@
     return;
   }
   
-//  BOOL success = [audioSession overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:&err];
-//  if (!success)  NSLog(@"AVAudioSession error overrideOutputAudioPort:%@", err);
-  
-//  UInt32 doChangeDefaultRoute = 1;
-//  AudioSessionSetProperty (kAudioSessionProperty_OverrideCategoryDefaultToSpeaker,
-//                           sizeof (doChangeDefaultRoute),
-//                           &doChangeDefaultRoute);
-  
-//  BOOL audioHWAvailable = audioSession.isInputAvailable;
   if (! audioSession.inputAvailable) {
-//    UIAlertView *cantRecordAlert =
-//    [[UIAlertView alloc] initWithTitle: @"Warning"
-//                               message: @"Audio input hardware not available"
-//                              delegate: nil
-//                     cancelButtonTitle:@"OK"
-//                     otherButtonTitles:nil];
-//    [cantRecordAlert show];
 
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle:@"Warning"
@@ -425,13 +409,6 @@
   {
     NSLog(@"recorder: %@ %ld %@", err.domain, (long)err.code, err.userInfo.description);
     
-//    UIAlertView *alert =
-//    [[UIAlertView alloc] initWithTitle: @"Warning"
-//                               message: [err localizedDescription]
-//                              delegate: nil
-//                     cancelButtonTitle:@"OK"
-//                     otherButtonTitles:nil];
-//    [alert show];
     NSString *errorMessage = err.localizedDescription ? err.localizedDescription : @"Unknown Error";
     
     UIAlertController * alert=   [UIAlertController
