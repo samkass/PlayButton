@@ -89,6 +89,9 @@
 -(void)dealloc {
   playAfterStop = NO;
   recordAfterStop = NO;
+  player.delegate = nil;
+  recorder.delegate = nil;
+
   [self stopPlaying];
   [self stopRecording];
   
