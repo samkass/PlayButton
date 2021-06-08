@@ -87,9 +87,16 @@
 }
 
 -(void)dealloc {
-  [self setPlayButton:nil];
-  [self setRecordButton:nil];
-  [self setRecordButton2:nil];
+  playAfterStop = NO;
+  recordAfterStop = NO;
+  [self stopPlaying];
+  [self stopRecording];
+  
+  player = nil;
+  recorder = nil;
+  playing = NO;
+  recording = NO;
+  stopping = NO;
 }
 
 -(void)configureButtonState
@@ -131,21 +138,6 @@
   
   playButton.enabled = [[NSFileManager defaultManager] fileExistsAtPath:self.playSoundPath];
   bool recordButtonEnabled = self.recorder != nil;
-  
-  switch ([[AVAudioSession sharedInstance] recordPermission]) {
-    case AVAudioSessionRecordPermissionGranted:
-      
-      break;
-    case AVAudioSessionRecordPermissionDenied:
-      recordButtonEnabled = false;
-      break;
-    case AVAudioSessionRecordPermissionUndetermined:
-      // This is the initial state before a user has made any choice
-      // You can use this spot to request permission here if you want
-      break;
-    default:
-      break;
-  }
   
   recordButton.enabled = recordButtonEnabled;
   recordButton2.enabled = recordButtonEnabled;
@@ -330,6 +322,29 @@
 
 - (void) initializeAudioSession
 {
+  switch ([[AVAudioSession sharedInstance] recordPermission]) {
+    case AVAudioSessionRecordPermissionGranted:
+      // Cool.
+      break;
+    case AVAudioSessionRecordPermissionDenied:
+      // Bummer. (self.recorder will eventually be nil and disable the button.)
+      break;
+    case AVAudioSessionRecordPermissionUndetermined:
+      if([[AVAudioSession sharedInstance] respondsToSelector:@selector(requestRecordPermission:)]) {
+         [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+                      if (granted) {
+                        // Microphone enabled code. Cool.
+                      }
+                      else {
+                        // Microphone disabled code. We'll find out the bad news later.
+                      }
+                   }];
+      }
+      break;
+    default:
+      break;
+  }
+  
   AVAudioSession *audioSession = [AVAudioSession sharedInstance];
   NSError *err = nil;
   [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord
@@ -423,7 +438,7 @@
   
   //prepare to record
   (self.recorder).delegate = self;
-  [self.recorder setMeteringEnabled:YES];
+//  [self.recorder setMeteringEnabled:YES];
   [self.recorder prepareToRecord];
 }
 
