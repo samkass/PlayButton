@@ -10,11 +10,11 @@
 
 #import "RecordButtonAppDelegate.h"
 
-int main(int argc, char *argv[])
-{
-  int retVal = 0;
+int main(int argc, char * argv[]) {
+  NSString * appDelegateClassName;
   @autoreleasepool {
-      retVal = UIApplicationMain(argc, argv, nil, NSStringFromClass([RecordButtonAppDelegate class]));
+      // Setup code that might create autoreleased objects goes here.
+      appDelegateClassName = NSStringFromClass([RecordButtonAppDelegate class]);
   }
-  return retVal;
+  return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }
