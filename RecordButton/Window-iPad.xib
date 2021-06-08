@@ -50,7 +50,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6">
-                        <rect key="frame" x="618" y="900" width="156" height="104"/>
+                        <rect key="frame" x="644" y="900" width="104" height="104"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <accessibility key="accessibilityConfiguration" hint="Tap to record a sound. Tap again to stop. Alternately, hold the button down to record and release to stop." label="Record"/>
                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -75,7 +75,7 @@
                 <outlet property="playButton" destination="5" id="21"/>
                 <outlet property="recordButton" destination="6" id="22"/>
             </connections>
-            <point key="canvasLocation" x="6" y="-550"/>
+            <point key="canvasLocation" x="5.46875" y="-550.1953125"/>
         </viewController>
     </objects>
     <resources>

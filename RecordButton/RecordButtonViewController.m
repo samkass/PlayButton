@@ -86,12 +86,10 @@
   [self configureButtonState];
 }
 
-- (void)viewDidUnload
-{
+-(void)dealloc {
   [self setPlayButton:nil];
   [self setRecordButton:nil];
   [self setRecordButton2:nil];
-  [super viewDidUnload];
 }
 
 -(void)configureButtonState
@@ -252,11 +250,6 @@
   {
     return audioAssetUrl.absoluteString;
   }
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-  return YES;
 }
 
 - (void) startRecording
