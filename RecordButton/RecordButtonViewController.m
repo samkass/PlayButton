@@ -123,9 +123,9 @@
 
   if (self.recording)
   {
-    [recordButton setImage:[UIImage imageNamed:@"stop.png"] forState:UIControlStateNormal];
+    [recordButton setImage:[UIImage imageNamed:@"stopHighlighted.png"] forState:UIControlStateNormal];
     [recordButton setImage:[UIImage imageNamed:@"stopHighlighted.png"] forState:UIControlStateHighlighted];
-    [recordButton2 setImage:[UIImage imageNamed:@"stop.png"] forState:UIControlStateNormal];
+    [recordButton2 setImage:[UIImage imageNamed:@"stopHighlighted.png"] forState:UIControlStateNormal];
     [recordButton2 setImage:[UIImage imageNamed:@"stopHighlighted.png"] forState:UIControlStateHighlighted];
   }
   else
