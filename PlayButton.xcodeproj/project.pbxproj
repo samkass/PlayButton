@@ -60,8 +60,6 @@
 		8775980116152898003926A2 /* record@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record@2x.png"; sourceTree = "<group>"; };
 		8775980216152898003926A2 /* record@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record@2x~ipad.png"; sourceTree = "<group>"; };
 		8775980316152898003926A2 /* record~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record~ipad.png"; sourceTree = "<group>"; };
-		87760A3F1452F3DA002D8CE0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = /Users/samkass/Development/iPhoneDev/RecordButton/RecordButton/fr.lproj/InfoPlist.strings; sourceTree = "<absolute>"; };
-		878EAA8714527EA800164B69 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = /Users/samkass/Development/iPhoneDev/RecordButton/RecordButton/es.lproj/InfoPlist.strings; sourceTree = "<absolute>"; };
 		87985405161532D20006E99B /* playHighlighted@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playHighlighted@2x~ipad.png"; sourceTree = "<group>"; };
 		8798541116169AC10006E99B /* recordHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recordHighlighted@2x.png"; sourceTree = "<group>"; };
 		8798541216169AC10006E99B /* recordHighlighted@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recordHighlighted@2x~ipad.png"; sourceTree = "<group>"; };
@@ -72,9 +70,12 @@
 		8798541D16169B8B0006E99B /* stopHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopHighlighted@2x.png"; sourceTree = "<group>"; };
 		8798541E16169B8B0006E99B /* stopHighlighted@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopHighlighted@2x~ipad.png"; sourceTree = "<group>"; };
 		8798541F16169B8B0006E99B /* stopHighlighted~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopHighlighted~ipad.png"; sourceTree = "<group>"; };
-		879C8F5414579CC100345BED /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/samkass/Development/iPhoneDev/RecordButton/RecordButton/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		87ACB3D91574553D00B9841A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		87ACB3E01574729C00B9841A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		87AEC5002675630C00B92BB3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		87AEC5012675631100B92BB3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		87AEC5022675631900B92BB3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		87AEC507267565CB00B92BB3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		87AF27E814492D0700A70EA9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		87BD87D116127C8B00ADDBF1 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		87BD87D416127C9600ADDBF1 /* play@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x~ipad.png"; sourceTree = "<group>"; };
@@ -90,7 +91,6 @@
 		87C9491813B56BDD00C8FE2D /* PlayButton-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlayButton-Info.plist"; sourceTree = "<group>"; };
 		87C9491A13B56BDD00C8FE2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		87C9491C13B56BDD00C8FE2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		87C9491E13B56BDD00C8FE2D /* PlayButton-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlayButton-Prefix.pch"; sourceTree = "<group>"; };
 		87C9491F13B56BDD00C8FE2D /* RecordButtonAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordButtonAppDelegate.h; sourceTree = "<group>"; };
 		87C9492013B56BDD00C8FE2D /* RecordButtonAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordButtonAppDelegate.m; sourceTree = "<group>"; };
 		87C9492213B56BDD00C8FE2D /* RecordButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordButtonViewController.h; sourceTree = "<group>"; };
@@ -185,7 +185,6 @@
 				87C9491813B56BDD00C8FE2D /* PlayButton-Info.plist */,
 				87C9491913B56BDD00C8FE2D /* InfoPlist.strings */,
 				87C9491C13B56BDD00C8FE2D /* main.m */,
-				87C9491E13B56BDD00C8FE2D /* PlayButton-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -267,6 +266,7 @@
 				fr,
 				"zh-Hans",
 				Base,
+				de,
 			);
 			mainGroup = 87C9490113B56BDC00C8FE2D;
 			productRefGroup = 87C9490D13B56BDD00C8FE2D /* Products */;
@@ -340,9 +340,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				87C9491A13B56BDD00C8FE2D /* en */,
-				878EAA8714527EA800164B69 /* es */,
-				87760A3F1452F3DA002D8CE0 /* fr */,
-				879C8F5414579CC100345BED /* zh-Hans */,
+				87AEC5002675630C00B92BB3 /* zh-Hans */,
+				87AEC5012675631100B92BB3 /* fr */,
+				87AEC5022675631900B92BB3 /* es */,
+				87AEC507267565CB00B92BB3 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -401,9 +402,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = 248K7Y7XWA;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RecordButton/PlayButton-Prefix.pch";
-				INFOPLIST_FILE = "RecordButton/PlayButton-Info.plist";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "PlayButton/PlayButton-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.samkass.PlayButton;
@@ -513,9 +514,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = 248K7Y7XWA;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RecordButton/PlayButton-Prefix.pch";
-				INFOPLIST_FILE = "RecordButton/PlayButton-Info.plist";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "PlayButton/PlayButton-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.samkass.PlayButton;
@@ -529,9 +530,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = 248K7Y7XWA;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RecordButton/PlayButton-Prefix.pch";
-				INFOPLIST_FILE = "RecordButton/PlayButton-Info.plist";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "PlayButton/PlayButton-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.samkass.PlayButton;

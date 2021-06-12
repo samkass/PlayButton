@@ -3,7 +3,7 @@
 //  RecordButton
 //
 //  Created by Sam Kass on 6/24/11.
-//  Copyright 2011 Aardustry LLC. All rights reserved.
+//  Copyright 2011-2021 Sam Kass. All rights reserved.
 //
 #import <AudioToolbox//AudioServices.h>
 
