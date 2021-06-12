@@ -133,7 +133,7 @@
 			children = (
 				87E548BB1E93018900B6BC54 /* Images.xcassets */,
 				87BD87D816127F8A00ADDBF1 /* Default-568h@2x.png */,
-				87C9491613B56BDD00C8FE2D /* RecordButton */,
+				87C9491613B56BDD00C8FE2D /* PlayButton */,
 				87C9490F13B56BDD00C8FE2D /* Frameworks */,
 				87C9490D13B56BDD00C8FE2D /* Products */,
 			);
@@ -162,7 +162,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		87C9491613B56BDD00C8FE2D /* RecordButton */ = {
+		87C9491613B56BDD00C8FE2D /* PlayButton */ = {
 			isa = PBXGroup;
 			children = (
 				87C9491F13B56BDD00C8FE2D /* RecordButtonAppDelegate.h */,
@@ -175,7 +175,7 @@
 				87C9494113B6368500C8FE2D /* Images */,
 				87C9491713B56BDD00C8FE2D /* Supporting Files */,
 			);
-			path = RecordButton;
+			path = PlayButton;
 			sourceTree = "<group>";
 		};
 		87C9491713B56BDD00C8FE2D /* Supporting Files */ = {
