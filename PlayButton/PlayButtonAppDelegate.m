@@ -1,19 +1,19 @@
 //
-//  RecordButtonAppDelegate.m
-//  RecordButton
+//  PlayButtonAppDelegate.m
+//  PlayButton
 //
 //  Created by Sam Kass on 6/24/11.
 //  Copyright 2011-2021 Sam Kass. All rights reserved.
 //
 #import <AudioToolbox//AudioServices.h>
 
-#import "RecordButtonAppDelegate.h"
+#import "PlayButtonAppDelegate.h"
 
-#import "RecordButtonViewController.h"
+#import "PlayButtonViewController.h"
 
 NSString *kRecordingLockedKey        = @"recordingLockedKey";
 
-@implementation RecordButtonAppDelegate
+@implementation PlayButtonAppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;

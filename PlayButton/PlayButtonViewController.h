@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MPMediaPickerController.h>
 
-@interface RecordButtonViewController : UIViewController
+@interface PlayButtonViewController : UIViewController
             <AVAudioRecorderDelegate, AVAudioPlayerDelegate, MPMediaPickerControllerDelegate>
 {
   UIButton *playButton;

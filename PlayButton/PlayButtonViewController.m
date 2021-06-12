@@ -1,6 +1,6 @@
 //
-//  RecordButtonViewController.m
-//  RecordButton
+//  PlayButtonViewController.m
+//  PlayButton
 //
 //  Created by Sam Kass on 6/24/11.
 //  Copyright 2011-2021 Sam Kass. All rights reserved.
@@ -10,9 +10,9 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 #import "AudioToolbox/AudioServices.h"
-#import "RecordButtonViewController.h"
+#import "PlayButtonViewController.h"
 
-@interface RecordButtonViewController ()
+@interface PlayButtonViewController ()
 
 @property (nonatomic) BOOL recording;
 @property (nonatomic) BOOL playing;
@@ -44,7 +44,7 @@
 
 @end
 
-@implementation RecordButtonViewController
+@implementation PlayButtonViewController
 @synthesize playButton;
 @synthesize recordButton, recordButton2;
 @synthesize locked, playAfterStop, recordAfterStop;
