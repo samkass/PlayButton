@@ -25,6 +25,7 @@
 		87ACB3DA1574553D00B9841A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87ACB3D91574553D00B9841A /* MediaPlayer.framework */; };
 		87ACB3E11574729C00B9841A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87ACB3E01574729C00B9841A /* CoreMedia.framework */; };
 		87AF27E914492D0700A70EA9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AF27E814492D0700A70EA9 /* AudioToolbox.framework */; };
+		87B8664C2676552C00B9DA6A /* screenshots in Resources */ = {isa = PBXBuildFile; fileRef = 87B8664B2676552C00B9DA6A /* screenshots */; };
 		87BD87D216127C8B00ADDBF1 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 87BD87D116127C8B00ADDBF1 /* play.png */; };
 		87BD87D616127C9600ADDBF1 /* play@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 87BD87D416127C9600ADDBF1 /* play@2x~ipad.png */; };
 		87BD87D716127C9600ADDBF1 /* play~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 87BD87D516127C9600ADDBF1 /* play~ipad.png */; };
@@ -75,6 +76,7 @@
 		87AEC5022675631900B92BB3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		87AEC507267565CB00B92BB3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		87AF27E814492D0700A70EA9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		87B8664B2676552C00B9DA6A /* screenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = screenshots; sourceTree = "<group>"; };
 		87BD87D116127C8B00ADDBF1 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		87BD87D416127C9600ADDBF1 /* play@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x~ipad.png"; sourceTree = "<group>"; };
 		87BD87D516127C9600ADDBF1 /* play~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play~ipad.png"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		87C9491613B56BDD00C8FE2D /* PlayButton */ = {
 			isa = PBXGroup;
 			children = (
+				87B8664B2676552C00B9DA6A /* screenshots */,
 				87C9491F13B56BDD00C8FE2D /* PlayButtonAppDelegate.h */,
 				87C9492013B56BDD00C8FE2D /* PlayButtonAppDelegate.m */,
 				87C9492213B56BDD00C8FE2D /* PlayButtonViewController.h */,
@@ -293,6 +296,7 @@
 				87BD87D916127F8A00ADDBF1 /* Default-568h@2x.png in Resources */,
 				87BD87DD1612B8DA00ADDBF1 /* playHighlighted@2x.png in Resources */,
 				87BD87DF1612B8DA00ADDBF1 /* playHighlighted~ipad.png in Resources */,
+				87B8664C2676552C00B9DA6A /* screenshots in Resources */,
 				877597FD1612BDE6003926A2 /* Window.xib in Resources */,
 				877598001612BED8003926A2 /* Window-iPad.xib in Resources */,
 				8775980416152899003926A2 /* record@2x.png in Resources */,
