@@ -10,6 +10,7 @@ education, and early childhood development. Enjoy.
 This code is being distributed under the GNU GPL 3.0, which allows you to use it as you
 see fit for your personal use, and redistribute the code as per its terms, but does not
 allow you to build and submit this app to the iOS App Store. However, copying and pasting 
-specific code snippets out of examples like these, I consider fair use, and not bound by any
+small code snippets out of examples like these, or using this code as a learning tool, 
+I consider fair use, and not bound by any
 Copyright agreement. This app is a pretty good example of setting up a simple record
 AVAudioRecorder and AVAudioPlayer and connecting them to a UI, so I hope you find it useful.
