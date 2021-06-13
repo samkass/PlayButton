@@ -27,7 +27,6 @@
 -(IBAction)pressPlayButton:(id)sender;
 -(IBAction)pressRecordButton:(id)sender;
 -(IBAction)chooseSoundFromLibrary:(id)sender;
--(IBAction)stopPlayingIfHeldAndReleased:(id)sender;
 -(IBAction)stopRecordingIfHeldAndReleased:(id)sender;
 
 - (void) stopRecording;

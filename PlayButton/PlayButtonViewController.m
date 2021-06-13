@@ -207,10 +207,6 @@
   [self dismissViewControllerAnimated: YES completion:nil];
 }
 
--(IBAction)stopPlayingIfHeldAndReleased:(id)sender
-{
-}
-
 -(IBAction)stopRecordingIfHeldAndReleased:(id)sender
 {
   NSDate *now = [NSDate date];
