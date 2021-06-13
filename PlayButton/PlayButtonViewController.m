@@ -1,9 +1,3 @@
-<<<<<<< HEAD:PlayButton/PlayButtonViewController.m
-//
-//  PlayButtonViewController.m
-//  PlayButton
-//
-=======
 /*
  * This file is part of the PlayButton distribution (https://github.com/samkass/PlayButton).
  * Copyright (c) 2011-2021 Sam Kass.
@@ -23,7 +17,6 @@
  * Non-Copyleft licenses are also available from the Copyright holder.
  */
 
->>>>>>> tmp:PlayButton/RecordButtonViewController.m
 //  Created by Sam Kass on 6/24/11.
 
 

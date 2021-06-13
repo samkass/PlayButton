@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-//
-//  PlayButtonAppDelegate.h
-//  PlayButton
-//
-//  Created by Sam Kass on 6/24/11.
-//  Copyright 2011-2021 Sam Kass. All rights reserved.
-//
-=======
 /*
  * This file is part of the PlayButton distribution (https://github.com/samkass/PlayButton).
  * Copyright (c) 2011-2021 Sam Kass.
@@ -28,7 +19,6 @@
 
 //  Created by Sam Kass on 6/24/11.
 
->>>>>>> tmp
 
 #import <UIKit/UIKit.h>
 
