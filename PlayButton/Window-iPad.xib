@@ -13,7 +13,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <customObject id="23" userLabel="PlayButton App Delegate" customClass="RecordButtonAppDelegate">
+        <customObject id="23" userLabel="PlayButton App Delegate" customClass="PlayButtonAppDelegate">
             <connections>
                 <outlet property="viewController" destination="3" id="24"/>
                 <outlet property="window" destination="2" id="25"/>
@@ -29,7 +29,7 @@
             </connections>
             <point key="canvasLocation" x="6" y="88"/>
         </window>
-        <viewController id="3" userLabel="PlayButton View Controller" customClass="RecordButtonViewController">
+        <viewController id="3" userLabel="PlayButton View Controller" customClass="PlayButtonViewController">
             <layoutGuides>
                 <viewControllerLayoutGuide type="top" id="GbL-4O-FAW"/>
                 <viewControllerLayoutGuide type="bottom" id="zh3-6Y-viN"/>
