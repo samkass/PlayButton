@@ -192,6 +192,9 @@
   }
 }
 
+// This idea was submitted years ago and I started to implement it (selecting sound from the music library
+//   instead of the record button), but I could never find a way to add it to the UI without dramatically
+//   reducing the simplicity of the app, so it remains an incomplete, code-only thing for now.
 -(IBAction)chooseSoundFromLibrary:(id)sender
 {
   MPMediaPickerController *picker =
