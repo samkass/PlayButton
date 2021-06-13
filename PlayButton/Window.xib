@@ -50,9 +50,6 @@
                         <state key="highlighted" image="playHighlighted.png">
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
-                        <connections>
-                            <action selector="pressPlayButton:" destination="3" eventType="touchUpInside" id="18"/>
-                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6">
                         <rect key="frame" x="287" y="575" width="72" height="72"/>
@@ -66,20 +63,12 @@
                         <state key="highlighted">
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
-                        <connections>
-                            <action selector="pressRecordButton:" destination="3" eventType="touchDown" id="21"/>
-                            <action selector="stopRecordingIfHeldAndReleased:" destination="3" eventType="touchUpInside" id="20"/>
-                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             </view>
             <extendedEdge key="edgesForExtendedLayout"/>
             <nil key="simulatedStatusBarMetrics"/>
-            <connections>
-                <outlet property="playButton" destination="5" id="16"/>
-                <outlet property="recordButton" destination="6" id="17"/>
-            </connections>
             <point key="canvasLocation" x="706" y="134"/>
         </viewController>
     </objects>
