@@ -2,7 +2,15 @@ PlayButton
 ==========
 
 PlayButton was designed at the extreme end of simplicity for audio recording 
-and playback functionality on iOS. The large play button was designed to be
+and playback functionality on iOS. It includes a single, large play button that
+plays back a sound. The sound is whatever was recorded by the small record button
+in the corner (which can also be toggled off in the Settings, to prevent accidental
+re-recording.)
+
+Screenshot:
+<img src="https://github.com/samkass/PlayButton/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPad%20Pro%20(12.9-inch)%20(5th%20generation)%20-%20portrait.png?raw=true" width="200">
+
+The large play button was designed to be
 accessible for anyone, including those with reduced motor control. Besides being
 fun, it is useful as a way to allow everyone to be included in music therapy, special
 education, and early childhood development. Enjoy.
