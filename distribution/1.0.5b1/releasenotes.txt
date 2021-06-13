@@ -1,8 +1,0 @@
-Starting the iOS 6/iPhone 5 updates with the smallest app… if you'd like to test it I'd appreciate tapping around a bit and seeing if it works and/or if you can break it.
-
-Release Notes for 1.0.5:
-* Update for iOS 6
-* iPhone 5 full-screen
-* iPad Retina Graphics
-* Fixes bug where app can hang on Play button
-* Disables Play button if there is no sound ready to play
